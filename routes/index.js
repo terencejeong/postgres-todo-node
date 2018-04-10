@@ -9,7 +9,7 @@ module.exports = app => {
   );
 
   // getting list of todos
-  app.get("/todos", todosController.list)
+  app.get("/api/todos", todosController.list)
 
   // posting todos
   app.post("/api/todos", todosController.create);
@@ -25,4 +25,10 @@ module.exports = app => {
 
   // deleting the todo. 
   app.delete("/api/todos/:todoId", todosController.deleteTodo);
+
+  // editing the todoItem of a todo. 
+  app.put('/api/todos/:todoId/items/:todoItemId', todoItemsController.updateTodoItem)
+
+  // deleting the todoItem of a todo
+  app.delete('/api/todos/:todoId/items/:todoItemId', todoItemsController.deleteTodoItem)
 };
