@@ -1,6 +1,5 @@
 const Todo = require('../models').Todo;
 
-
 exports.create = async (req, res) => {
 
     try {
@@ -13,7 +12,7 @@ exports.create = async (req, res) => {
   };
 
 exports.list = async (req, res) => {
-    
+
     try {
         const todo = await Todo.all(); 
         res.status(200).send(todo)

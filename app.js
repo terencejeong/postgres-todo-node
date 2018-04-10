@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 require("./routes")(app);
+
 // Setup a default catch-all route that sends back a welcome message in JSON format.
 app.get("*", (req, res) =>
   res.status(200).send({
