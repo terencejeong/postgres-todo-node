@@ -1,4 +1,5 @@
 const Todo = require('../models').Todo;
+const TodoItem = require('../models').TodoItem
 
 exports.create = async (req, res) => {
 
@@ -14,7 +15,12 @@ exports.create = async (req, res) => {
 exports.list = async (req, res) => {
 
     try {
-        const todo = await Todo.all(); 
+        const todo = await Todo.findAll({
+            include: [{
+                model: TodoItem, 
+                as: 'todoItems'
+            }]
+        }); 
         res.status(200).send(todo)
 
     } catch (e) {
