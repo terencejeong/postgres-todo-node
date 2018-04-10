@@ -14,13 +14,3 @@ exports.create = async (req, res) => {
     }    
 }
 
-// exports.list = async (req, res) => {
-//     try {
-//         const todoItem = await TodoItem.find().where({
-//             todoId: req.params.todoId
-//         }); 
-//         res.status(200).send(todoItem)
-//     } catch (e) {
-//         res.status(400).send(e)
-//     }
-// }

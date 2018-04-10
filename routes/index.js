@@ -17,6 +17,12 @@ module.exports = app => {
   // posting todo items - grabbing ID from params. 
   app.post("/api/todos/:todoId/items", todoItemsController.create); 
 
+  // getting single todo and todoitems associated with todo
   app.get("/api/todos/:todoId", todosController.findTodo)
 
+  // editing the todo of a single todo
+  app.put('/api/todos/:todoId', todosController.updateTodo)
+
+  // deleting the todo. 
+  app.delete("/api/todos/:todoId", todosController.deleteTodo);
 };
